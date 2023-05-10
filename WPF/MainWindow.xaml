@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
-        xmlns:prop="clr-namespace:WPF.Properties.Resource"
+        xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Closing="Window_Closing"
@@ -58,10 +58,10 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="{x:Static prop:re}"/>
-            <Label Grid.Column="1" Content="{x:Static prop:Resource.glblAwayTeam}" />
-            <Label Grid.Column="2" Content="{x:Static prop:Resource.glblResult}" />
-            <Button Grid.Column="3" Content="{x:Static prop:Resource.gbtnSettings}" Click="Settings_Click" />
+            <Label Content="{x:Static lang:Resources.glblHomeTeam}"/>
+            <Label Grid.Column="1" Content="{x:Static lang:Resources.glblAwayTeam}" />
+            <Label Grid.Column="2" Content="{x:Static lang:Resources.glblResult}" />
+            <Button Grid.Column="3" Content="{x:Static lang:Resources.gbtnSettings}" Click="Settings_Click" />
 
 
             <Button x:Name="btnHomeTeamDetails" Content="Open home team" HorizontalAlignment="Left" Margin="10,47,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
