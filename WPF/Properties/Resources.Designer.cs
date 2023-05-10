@@ -29,7 +29,7 @@ namespace WPF.Properties {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        public Resources() {
         }
         
         /// <summary>
@@ -129,6 +129,15 @@ namespace WPF.Properties {
         public static string gTitle {
             get {
                 return ResourceManager.GetString("gTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Captain.
+        /// </summary>
+        public static string lblCaptainText {
+            get {
+                return ResourceManager.GetString("lblCaptainText", resourceCulture);
             }
         }
         

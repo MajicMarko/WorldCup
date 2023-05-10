@@ -141,6 +141,9 @@
   <data name="gTitle" xml:space="preserve">
     <value>Game</value>
   </data>
+  <data name="lblCaptainText" xml:space="preserve">
+    <value>Captain</value>
+  </data>
   <data name="mmbtnNo" xml:space="preserve">
     <value>No</value>
   </data>

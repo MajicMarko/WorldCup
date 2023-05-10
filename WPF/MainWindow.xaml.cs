@@ -159,7 +159,7 @@ namespace WPF
                 LoadGoals(match.AwayTeam, match.HomeTeam);
                 LoadField(match.AwayTeamStatistics, match.HomeTeamStatistics);
             }
-            lblResult.Visibility = Visibility.Visible;
+            //lblResult.Visibility = Visibility.Visible;
         }
 
         private void LoadField(TeamStatistics homeTeamStatistics, TeamStatistics awayTeamStatistics)
@@ -248,7 +248,7 @@ namespace WPF
 
         private void LoadGoals(Team homeTeam, Team awayTeam)
         {
-            lblResult.Content = $"{homeTeam.Goals} : {awayTeam.Goals}";
+           // lblResult.Content = $"{homeTeam.Goals} : {awayTeam.Goals}";
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
+        xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
         Title="TeamDetails" Height="450" Width="800">
     <Window.Resources>
@@ -48,35 +49,37 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Label Content="GamesPlayed}"/>
-            <Label x:Name="lblGamesPlayed"/>
+            <Label 
+                 Content="{x:Static lang:Resources.tdlblGamesPlayed}"/>
+            <Label
+                x:Name="lblGamesPlayed"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
-                <Label Content="lWins}"/>
+                <Label Content="{x:Static lang:Resources.tdlblWins}"/>
                 <Label x:Name="lblGameWins"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="lLosses}"/>
+                <Label  Content="{x:Static lang:Resources.tdlblLosses}"/>
                 <Label x:Name="lblGameLosses"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Draws}"/>
+                <Label  Content="{x:Static lang:Resources.tdlblDraws}"/>
                 <Label x:Name="lblGameDraws"/>
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Label Content="GoalsDifferential}"/>
+            <Label  Content="{x:Static lang:Resources.tdlblGoalsDifferential}"/>
             <Label x:Name="lblGoalsDifferential"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
-                <Label Content="GoalsGiven}"/>
+                <Label  Content="{x:Static lang:Resources.tdlblGoalsGiven}"/>
                 <Label x:Name="lblGoalsFor"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Taken:"/>
+                <Label  Content="{x:Static lang:Resources.tdlblGaolsTaken}"/>
                 <Label x:Name="lblGoalsAgainst"/>
             </StackPanel>
         </StackPanel>
