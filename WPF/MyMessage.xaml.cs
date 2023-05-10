@@ -26,6 +26,8 @@ namespace WPF
             txtMessage.Text = message;
         }
 
+
+        void IComponentConnector();
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
