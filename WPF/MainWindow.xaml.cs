@@ -13,11 +13,10 @@ using System.Windows.Input;
 namespace WPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Game.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        
         private static IRepo repo;
         private static IImageRepo images;
         private Settings.LanguageE language;
@@ -28,6 +27,8 @@ namespace WPF
         private Match match;
         private SettingsDefault settingsDefault;
         private bool editing;
+
+
 
         public MainWindow(IRepo repository, Settings mainSettings)
         {
@@ -65,7 +66,7 @@ namespace WPF
         {
             lblError.Content = "Loading data...";
             lblError.Visibility = Visibility.Visible;
-            //sPError.Visibility = Visibility.Visible;
+            sPError.Visibility = Visibility.Visible;
             btnAwayTeamDetails.IsEnabled = false;
             btnHomeTeamDetails.IsEnabled = false;
             try
@@ -77,7 +78,7 @@ namespace WPF
             {
                 lblError.Content = "Conntect costumer support.\nKontaktiraj korisničku službu.";
                 lblError.Visibility = Visibility.Visible;
-                //sPError.Visibility = Visibility.Hidden;
+                sPError.Visibility = Visibility.Hidden;
             }
             teams.ToList().Sort();
             teams.ToList().ForEach(t => ddlHomeTeam.Items.Add(t));
@@ -92,7 +93,7 @@ namespace WPF
             }
 
             lblError.Visibility = Visibility.Hidden;
-            //sPError.Visibility = Visibility.Hidden;
+            sPError.Visibility = Visibility.Hidden;
             btnAwayTeamDetails.IsEnabled = true;
             btnHomeTeamDetails.IsEnabled = true;
         }
@@ -159,7 +160,7 @@ namespace WPF
                 LoadGoals(match.AwayTeam, match.HomeTeam);
                 LoadField(match.AwayTeamStatistics, match.HomeTeamStatistics);
             }
-            //lblResult.Visibility = Visibility.Visible;
+            lblResult.Visibility = Visibility.Visible;
         }
 
         private void LoadField(TeamStatistics homeTeamStatistics, TeamStatistics awayTeamStatistics)
@@ -248,7 +249,7 @@ namespace WPF
 
         private void LoadGoals(Team homeTeam, Team awayTeam)
         {
-           // lblResult.Content = $"{homeTeam.Goals} : {awayTeam.Goals}";
+            lblResult.Content = $"{homeTeam.Goals} : {awayTeam.Goals}";
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)

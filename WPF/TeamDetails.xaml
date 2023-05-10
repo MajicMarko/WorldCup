@@ -3,21 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF"
         xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
-        Title="TeamDetails" Height="450" Width="800">
+        Title="{x:Static lang:Resources.tdTitle}" Height="450" Width="800" MinHeight="450" MinWidth="800">
     <Window.Resources>
-        <Style TargetType="{x:Type Label}">
-            <Setter Property="Margin" Value="3"/>
-            <Setter Property="FontSize" Value="25" />
-        </Style>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="VerticalAlignment" Value="Bottom" />
-            <Setter Property="Margin" Value="3" />
-            <Setter Property="Padding" Value="10, 5" />
-            <Setter Property="FontSize" Value="20" />
-        </Style>
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="FontSize" Value="25" />
+    </Style>
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="Padding" Value="10, 5" />
+        <Setter Property="FontSize" Value="20" />
+    </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -49,10 +48,8 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Label 
-                 Content="{x:Static lang:Resources.tdlblGamesPlayed}"/>
-            <Label
-                x:Name="lblGamesPlayed"/>
+            <Label Content="{x:Static lang:Resources.tdlblGamesPlayed}"/>
+            <Label x:Name="lblGamesPlayed"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
@@ -60,30 +57,30 @@
                 <Label x:Name="lblGameWins"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label  Content="{x:Static lang:Resources.tdlblLosses}"/>
+                <Label Content="{x:Static lang:Resources.tdlblLosses}"/>
                 <Label x:Name="lblGameLosses"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label  Content="{x:Static lang:Resources.tdlblDraws}"/>
+                <Label Content="{x:Static lang:Resources.tdlblDraws}"/>
                 <Label x:Name="lblGameDraws"/>
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Label  Content="{x:Static lang:Resources.tdlblGoalsDifferential}"/>
+            <Label Content="{x:Static lang:Resources.tdlblGoalsDifferential}"/>
             <Label x:Name="lblGoalsDifferential"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
-                <Label  Content="{x:Static lang:Resources.tdlblGoalsGiven}"/>
+                <Label Content="{x:Static lang:Resources.tdlblGoalsGiven}"/>
                 <Label x:Name="lblGoalsFor"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label  Content="{x:Static lang:Resources.tdlblGaolsTaken}"/>
+                <Label Content="{x:Static lang:Resources.tdlblGaolsTaken}"/>
                 <Label x:Name="lblGoalsAgainst"/>
             </StackPanel>
         </StackPanel>
 
-        <Button Grid.Row="3" Click="Button_Click" Content="Close}"/>
+        <Button Grid.Row="3" Click="Button_Click" Content="{x:Static lang:Resources.btnClose}"/>
     </Grid>
 </Window>

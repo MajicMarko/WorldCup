@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF"
+        xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="SettingsDefault"  Height="300" Width="500">
     <Window.Resources>
         <Style TargetType="{x:Type Label}">
@@ -42,30 +43,30 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Championship}"></Label>
+        <Label Content="{x:Static lang:Resources.sdlblChampionship}"></Label>
         <ComboBox Grid.Column="1" x:Name="ddlChampionship">
-            <ComboBoxItem x:Name="Women" Content="Women}" IsSelected="True"/>
-            <ComboBoxItem x:Name="Men" Content="Men}"/>
+            <ComboBoxItem x:Name="Women" Content="{x:Static lang:Resources.sdddliWomen}" IsSelected="True"/>
+            <ComboBoxItem x:Name="Men" Content="{x:Static lang:Resources.sddliMen}"/>
         </ComboBox>
 
-        <Label Grid.Row="2" Content="Language}"></Label>
+        <Label Grid.Row="2" Content="{x:Static lang:Resources.sdlblLanguage}"></Label>
         <ComboBox Grid.Column="1" Grid.Row="2" x:Name="ddlLanguage" SelectionChanged="ddlLanguage_SelectionChanged">
-            <ComboBoxItem x:Name="en" Content="English}" IsSelected="True"/>
-            <ComboBoxItem x:Name="hr" Content="Croatian}"/>
+            <ComboBoxItem x:Name="en" Content="{x:Static lang:Resources.sddliEnglish}" IsSelected="True"/>
+            <ComboBoxItem x:Name="hr" Content="{x:Static lang:Resources.sddliCroatian}"/>
         </ComboBox>
 
-        <Label Grid.Row="3" Content="Resolution}"></Label>
+        <Label Grid.Row="3" Content="{x:Static lang:Resources.sdlblResolution}"></Label>
         <ComboBox Grid.Column="1" Grid.Row="3" x:Name="ddlSize">
-            <ComboBoxItem x:Name="Small" Content="Small}" IsSelected="True"/>
-            <ComboBoxItem x:Name="Medium" Content="Medium}"/>
-            <ComboBoxItem x:Name="Maximize" Content="Maximize}"/>
+            <ComboBoxItem x:Name="Small" Content="{x:Static lang:Resources.sdddliSmall}" IsSelected="True"/>
+            <ComboBoxItem x:Name="Medium" Content="{x:Static lang:Resources.sdddliMedium}"/>
+            <ComboBoxItem x:Name="Maximize" Content="{x:Static lang:Resources.sdddliMaximize}"/>
         </ComboBox>
 
         <Button Grid.Row="4" Grid.Column="2" 
                 HorizontalAlignment="Left" Click="BtnExit_Click" 
-                Content="Close}"></Button>
+                Content="{x:Static lang:Resources.btnClose}"></Button>
         <Button Grid.Row="4" Grid.Column="2"
                 HorizontalAlignment="Right" Click="BtnSave_Click" 
-                Content="Next}"></Button>
+                Content="{x:Static lang:Resources.sdbtnNext}"></Button>
     </Grid>
 </Window>

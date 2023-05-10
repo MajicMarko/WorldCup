@@ -1,7 +1,7 @@
 Men
 en
 Small
-France|FRA
-Hugo LLORIS|False|1|Goalie
-Benjamin PAVARD|False|2|Defender
-Raphael VARANE|False|4|Defender
+Croatia|CRO
+Danijel SUBASIC|False|23|Goalie
+Sime VRSALJKO|False|2|Defender
+Ivan STRINIC|False|3|Defender

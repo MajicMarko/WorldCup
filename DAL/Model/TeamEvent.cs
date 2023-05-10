@@ -25,7 +25,7 @@ namespace DAL.Model
         };
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("type_of_event")]
         public TypeOfEventE TypeOfEvent { get; set; }

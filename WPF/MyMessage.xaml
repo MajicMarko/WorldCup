@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF"
+        xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
-        Title="MyMessage" Height="450" Width="800">
+        Title="{x:Static lang:Resources.mmTitle}" Height="250" Width="400">
     <Window.Resources>
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -30,7 +30,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.ColumnSpan="2" TextWrapping="Wrap" x:Name="txtMessage"/>
-        <Button Grid.Row="1" x:Name="Yes" Content="Yes" Click="Yes_Click"/>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="No" Content="No" Click="No_Click"/>
+        <Button Grid.Row="1" x:Name="Yes" Content="{x:Static lang:Resources.mmbtnYes}" Click="Yes_Click"/>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="No" Content="{x:Static lang:Resources.mmbtnNo}" Click="No_Click"/>
     </Grid>
 </Window>

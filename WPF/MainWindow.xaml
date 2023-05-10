@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
-        xmlns:lang="clr-namespace:WPF.Properties"
+        xmlns:lang="clr-namespace:WPF.Properties" xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Closing="Window_Closing"
-        Title="MainWindow" 
+        Title="{x:Static lang:Resources.gTitle}" 
         MinHeight="500" MinWidth="650"
         Background="Gray">
     <Window.Resources>
@@ -33,9 +33,9 @@
             <Setter Property="Padding" Value="10, 5" />
             <Setter Property="FontSize" Value="20" />
         </Style>
-        <!--<Style TargetType="{x:Type local:PlayerUC}">
+        <Style TargetType="{x:Type local:PlayerUC}">
             <Setter Property="VerticalAlignment" Value="Center" />
-        </Style>-->
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -64,15 +64,16 @@
             <Button Grid.Column="3" Content="{x:Static lang:Resources.gbtnSettings}" Click="Settings_Click" />
 
 
-            <Button x:Name="btnHomeTeamDetails" Content="Open home team" HorizontalAlignment="Left" Margin="10,47,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
-            <Button x:Name="btnAwayTeamDetails" Content="Open away team" HorizontalAlignment="Left" Margin="207,47,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
-            <ComboBox x:Name="ddlHomeTeam" Grid.Column="3" HorizontalAlignment="Left" Margin="10,9,0,0" Grid.Row="2" VerticalAlignment="Top" Width="177"/>
-            <ComboBox x:Name="ddlAgainstTeam" Grid.Column="3" HorizontalAlignment="Left" Margin="207,9,0,0" Grid.Row="2" VerticalAlignment="Top" Width="177"/>
+            <ComboBox Grid.Row="1" x:Name="ddlHomeTeam" SelectionChanged="ddlHomeTeam_IndexChanged"></ComboBox>
+            <ComboBox Grid.Row="1" Grid.Column="1" x:Name="ddlAgainstTeam" SelectionChanged="ddlAwayTeam_IndexChanged"></ComboBox>
+            <Label Grid.Row="1" Grid.Column="2" x:Name="lblResult" FontSize="25" FontWeight="Bold" Visibility="Hidden"/>
+
+            <Button Grid.Row="2" x:Name="btnHomeTeamDetails" Content="{x:Static lang:Resources.gbtnOpenHomeTeam}" Click="OpenHomeTeam_Click"/>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="btnAwayTeamDetails" Content="{x:Static lang:Resources.gbtnOpenAwayTeam}" Click="AwayHomeTeam_Click"/>
             <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" >
                 <Label x:Name="lblError" Foreground="Red" />
-                <!--<fa:ImageAwesome x:Name="sPError" Icon="Cog" Spin="True" SpinDuration="2" Height="20" Visibility="Hidden"/>-->
+                <fa:ImageAwesome x:Name="sPError" Icon="Cog" Spin="True" SpinDuration="2" Height="20" Visibility="Hidden"/>
             </StackPanel>
-            <Label Grid.Column="3" Content="Label" HorizontalAlignment="Left" Margin="401,5,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.RowSpan="2"/>
 
 
         </Grid>
@@ -80,7 +81,7 @@
 
         <Grid Grid.Row="1">
             <Grid.Background>
-                <ImageBrush ImageSource="/Soccer_Field.png" />
+                <ImageBrush ImageSource="/soccer_Field.png" />
             </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

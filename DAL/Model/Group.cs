@@ -6,7 +6,7 @@ namespace DAL.Model
     public class Group
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("letter")]
         public string Letter { get; set; }
