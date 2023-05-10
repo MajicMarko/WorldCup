@@ -1,0 +1,118 @@
+﻿<Window x:Class="WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        xmlns:prop="clr-namespace:WPF.Properties.Resource"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        Title="MainWindow" 
+        MinHeight="500" MinWidth="650"
+        Background="Gray">
+    <Window.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="{x:Type StackPanel}">
+            <Setter Property="Orientation" Value="Horizontal"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="Padding" Value="10, 5" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <!--<Style TargetType="{x:Type local:PlayerUC}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>-->
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="146"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="14*"/>
+                <RowDefinition Height="47*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="{x:Static prop:re}"/>
+            <Label Grid.Column="1" Content="{x:Static prop:Resource.glblAwayTeam}" />
+            <Label Grid.Column="2" Content="{x:Static prop:Resource.glblResult}" />
+            <Button Grid.Column="3" Content="{x:Static prop:Resource.gbtnSettings}" Click="Settings_Click" />
+
+
+            <Button x:Name="btnHomeTeamDetails" Content="Open home team" HorizontalAlignment="Left" Margin="10,47,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
+            <Button x:Name="btnAwayTeamDetails" Content="Open away team" HorizontalAlignment="Left" Margin="207,47,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
+            <ComboBox x:Name="ddlHomeTeam" Grid.Column="3" HorizontalAlignment="Left" Margin="10,9,0,0" Grid.Row="2" VerticalAlignment="Top" Width="177"/>
+            <ComboBox x:Name="ddlAgainstTeam" Grid.Column="3" HorizontalAlignment="Left" Margin="207,9,0,0" Grid.Row="2" VerticalAlignment="Top" Width="177"/>
+            <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" >
+                <Label x:Name="lblError" Foreground="Red" />
+                <!--<fa:ImageAwesome x:Name="sPError" Icon="Cog" Spin="True" SpinDuration="2" Height="20" Visibility="Hidden"/>-->
+            </StackPanel>
+            <Label Grid.Column="3" Content="Label" HorizontalAlignment="Left" Margin="401,5,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.RowSpan="2"/>
+
+
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Soccer_Field.png" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="HomeTeamField">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" x:Name="goalieColumn" Orientation="Vertical" VerticalAlignment="Center"/>
+                <StackPanel Grid.Column="1" x:Name="defendersColumn" Orientation="Vertical" VerticalAlignment="Center"/>
+                <StackPanel Grid.Column="2" x:Name="midfieldColumn" Orientation="Vertical" VerticalAlignment="Center"/>
+                <StackPanel Grid.Column="3" x:Name="forwardColumn" Orientation="Vertical" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Column="1" x:Name="AwayTeamField">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" x:Name="awayForwardColumn" Orientation="Vertical" VerticalAlignment="Center"/>
+                <StackPanel Grid.Column="1" x:Name="awayMidfieldColumn" Orientation="Vertical" VerticalAlignment="Center"/>
+                <StackPanel Grid.Column="2" x:Name="awayDefendersColumn" Orientation="Vertical" VerticalAlignment="Center"/>
+                <StackPanel Grid.Column="3" x:Name="awayGoalieColumn" Orientation="Vertical" VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

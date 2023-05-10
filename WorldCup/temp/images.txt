@@ -1,0 +1,4 @@
+
+Khadim NDIAYE|C:\Users\Marko\source\repos\WorldCup\WorldCup\Resource\goal.png
+Hugo LLORIS|C:\Users\Marko\source\repos\WorldCup\WorldCup\Resource\goal.png
+Benjamin PAVARD|C:\Users\Marko\source\repos\WorldCup\WorldCup\Resource\substitution.png

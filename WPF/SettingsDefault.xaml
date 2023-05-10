@@ -1,0 +1,71 @@
+﻿<Window x:Class="WPF.SettingsDefault"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="SettingsDefault"  Height="300" Width="500">
+    <Window.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="30, 20" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="gridparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Championship}"></Label>
+        <ComboBox Grid.Column="1" x:Name="ddlChampionship">
+            <ComboBoxItem x:Name="Women" Content="Women}" IsSelected="True"/>
+            <ComboBoxItem x:Name="Men" Content="Men}"/>
+        </ComboBox>
+
+        <Label Grid.Row="2" Content="Language}"></Label>
+        <ComboBox Grid.Column="1" Grid.Row="2" x:Name="ddlLanguage" SelectionChanged="ddlLanguage_SelectionChanged">
+            <ComboBoxItem x:Name="en" Content="English}" IsSelected="True"/>
+            <ComboBoxItem x:Name="hr" Content="Croatian}"/>
+        </ComboBox>
+
+        <Label Grid.Row="3" Content="Resolution}"></Label>
+        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="ddlSize">
+            <ComboBoxItem x:Name="Small" Content="Small}" IsSelected="True"/>
+            <ComboBoxItem x:Name="Medium" Content="Medium}"/>
+            <ComboBoxItem x:Name="Maximize" Content="Maximize}"/>
+        </ComboBox>
+
+        <Button Grid.Row="4" Grid.Column="2" 
+                HorizontalAlignment="Left" Click="BtnExit_Click" 
+                Content="Close}"></Button>
+        <Button Grid.Row="4" Grid.Column="2"
+                HorizontalAlignment="Right" Click="BtnSave_Click" 
+                Content="Next}"></Button>
+    </Grid>
+</Window>

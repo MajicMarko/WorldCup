@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="WPF.PlayerUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="80" Width="80" Height="80">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="3">
+        <StackPanel Background="Transparent" Orientation="Vertical">
+            <Image x:Name="imgPlayer" Margin="3" Height="35" Source="/default.png"/>
+            <Label x:Name="lblName" FontSize="10" Content="Player name"/>
+            <Label x:Name="lblNumber" FontSize="15" Content="Shirt num"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
