@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="default.png" />
+    <None Remove="Soccer_Field.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,9 @@
 
   <ItemGroup>
     <Resource Include="default.png" />
+    <Resource Include="Soccer_Field.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

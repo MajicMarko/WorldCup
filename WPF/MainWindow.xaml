@@ -81,7 +81,7 @@
 
         <Grid Grid.Row="1">
             <Grid.Background>
-                <ImageBrush ImageSource="/soccer_Field.png" />
+                <ImageBrush ImageSource="soccer_Field.png" />
             </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
