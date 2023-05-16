@@ -38,39 +38,56 @@
         </Style>
     </Window.Resources>
     <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="\images\bgStadium.jpg" >
+                <ImageBrush.Transform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-200"/>
+                    </TransformGroup>
+                </ImageBrush.Transform>
+            </ImageBrush>
+        </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="146"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid>
+        <Grid HorizontalAlignment="Center">
+
+ 
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="14*"/>
-                <RowDefinition Height="47*"/>
+                <RowDefinition Height="47"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="300" MinWidth="69.264"/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="{x:Static lang:Resources.glblHomeTeam}"/>
-            <Label Grid.Column="1" Content="{x:Static lang:Resources.glblAwayTeam}" />
-            <Label Grid.Column="2" Content="{x:Static lang:Resources.glblResult}" />
-            <Button Grid.Column="3" Content="{x:Static lang:Resources.gbtnSettings}" Click="Settings_Click" />
+
+            <Label Content="{x:Static lang:Resources.glblHomeTeam}" Margin="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+            <Label Grid.Column="2" Content="{x:Static lang:Resources.glblAwayTeam}" Margin="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" />
+            <Label Grid.Column="1" Content="{x:Static lang:Resources.glblResult}" Margin="3,3,3,3" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" />
+            <Button Grid.Column="1" Grid.Row="2" Content="{x:Static lang:Resources.gbtnSettings}" Click="Settings_Click" Height="39" Margin="0,2,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
 
-            <ComboBox Grid.Row="1" x:Name="ddlHomeTeam" SelectionChanged="ddlHomeTeam_IndexChanged"></ComboBox>
-            <ComboBox Grid.Row="1" Grid.Column="1" x:Name="ddlAgainstTeam" SelectionChanged="ddlAwayTeam_IndexChanged"></ComboBox>
-            <Label Grid.Row="1" Grid.Column="2" x:Name="lblResult" FontSize="25" FontWeight="Bold" Visibility="Hidden"/>
+            <ComboBox Grid.Row="1" x:Name="ddlHomeTeam" SelectionChanged="ddlHomeTeam_IndexChanged" Margin="3,3,3,3"></ComboBox>
+            <ComboBox Grid.Row="1" Grid.Column="2" x:Name="ddlAgainstTeam" SelectionChanged="ddlAwayTeam_IndexChanged" Margin="3,3,3,3"></ComboBox>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="lblResult" FontSize="25" Visibility="Hidden" Margin="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" Background="#33080808"/>
 
-            <Button Grid.Row="2" x:Name="btnHomeTeamDetails" Content="{x:Static lang:Resources.gbtnOpenHomeTeam}" Click="OpenHomeTeam_Click"/>
-            <Button Grid.Row="2" Grid.Column="1" x:Name="btnAwayTeamDetails" Content="{x:Static lang:Resources.gbtnOpenAwayTeam}" Click="AwayHomeTeam_Click"/>
-            <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" >
+            <Button Grid.Row="2" x:Name="btnHomeTeamDetails" Content="{x:Static lang:Resources.gbtnOpenHomeTeam}" Click="OpenHomeTeam_Click" Height="39" Margin="3,0,3,0" VerticalAlignment="Center"/>
+            <Button Grid.Row="2" Grid.Column="2" x:Name="btnAwayTeamDetails" Content="{x:Static lang:Resources.gbtnOpenAwayTeam}" Click="AwayHomeTeam_Click" Height="39" Margin="3,0,3,0" VerticalAlignment="Center"/>
+            <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Margin="99,38,0,4" Grid.RowSpan="3" >
                 <Label x:Name="lblError" Foreground="Red" />
                 <fa:ImageAwesome x:Name="sPError" Icon="Cog" Spin="True" SpinDuration="2" Height="20" Visibility="Hidden"/>
             </StackPanel>
@@ -81,7 +98,7 @@
 
         <Grid Grid.Row="1">
             <Grid.Background>
-                <ImageBrush ImageSource="soccer_Field.png" />
+                <ImageBrush ImageSource="images\soccer_Field.png" />
             </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

@@ -41,13 +41,13 @@ namespace WPF
             //ode je bila greska jer je uzimalo 0 pogledaj i za medium ostale stvari rade
             if (settings.Size == DAL.Model.Settings.WindowSizeE.Small)
             {
-                this.Height = 800;
-                this.Width = 1200;
+                this.Height = 600;
+                this.Width = 1000;
             }
             if (settings.Size == DAL.Model.Settings.WindowSizeE.Midium)
             {
-                this.Height = 1000;
-                this.Width = 1400;
+                this.Height = 800;
+                this.Width = 1200;
             }
             if (settings.Size == DAL.Model.Settings.WindowSizeE.Maximize)
             {

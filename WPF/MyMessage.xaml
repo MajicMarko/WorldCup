@@ -20,6 +20,10 @@
         </Style>
     </Window.Resources>
     <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="\images\bg4.jpg" />
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -29,8 +33,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.ColumnSpan="2" TextWrapping="Wrap" x:Name="txtMessage"/>
-        <Button Grid.Row="1" x:Name="Yes" Content="{x:Static lang:Resources.mmbtnYes}" Click="Yes_Click"/>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="No" Content="{x:Static lang:Resources.mmbtnNo}" Click="No_Click"/>
+        <TextBlock Grid.ColumnSpan="2" TextWrapping="Wrap" x:Name="txtMessage" Foreground="White" FontSize="24"/>
+        <Button Grid.Row="1" x:Name="Yes" Content="{x:Static lang:Resources.mmbtnYes}" Click="Yes_Click" FontSize="10" HorizontalAlignment="Left" Margin="69,18,0,0" VerticalAlignment="Top" Height="62" Foreground="White" Background="Black" FontWeight="Bold"/>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="No" Content="{x:Static lang:Resources.mmbtnNo}" Click="No_Click" FontSize="10" Height="62" HorizontalAlignment="Left" Margin="26,18,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontWeight="Bold"/>
     </Grid>
 </Window>

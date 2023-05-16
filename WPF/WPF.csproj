@@ -8,7 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="bg6.png" />
     <None Remove="default.png" />
+    <None Remove="images\bg2.jpg" />
+    <None Remove="images\bg3.jpg" />
+    <None Remove="images\bg4.jpg" />
+    <None Remove="images\bg5.jpg" />
+    <None Remove="images\bgStadium.jpg" />
     <None Remove="Soccer_Field.png" />
   </ItemGroup>
 
@@ -23,8 +29,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="default.png" />
-    <Resource Include="Soccer_Field.png">
+    <Resource Include="images\bg6.png" />
+    <Resource Include="images\bg2.jpg" />
+    <Resource Include="images\bg3.jpg" />
+    <Resource Include="images\bg4.jpg" />
+    <Resource Include="images\bg5.jpg" />
+    <Resource Include="images\bgStadium.jpg" />
+    <Resource Include="images\default.png" />
+    <Resource Include="images\Soccer_Field.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

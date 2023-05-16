@@ -32,41 +32,46 @@
     </Window.Resources>
     <Grid x:Name="gridparent">
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="{x:Static lang:Resources.sdlblChampionship}"></Label>
-        <ComboBox Grid.Column="1" x:Name="ddlChampionship">
+        <Grid.Background>
+            <ImageBrush ImageSource="\images\bg4.jpg" />
+        </Grid.Background>
+
+        <Label Grid.Row="1" Content="{x:Static lang:Resources.sdlblChampionship}" HorizontalAlignment="Right" Margin="0,0,0,38" Grid.RowSpan="2" Width="215" Foreground="White" VerticalAlignment="Center"></Label>
+        <ComboBox Grid.Row="1" Grid.Column="1" x:Name="ddlChampionship" Margin="3,3,3,3" HorizontalAlignment="Left" VerticalAlignment="Center">
+
             <ComboBoxItem x:Name="Women" Content="{x:Static lang:Resources.sdddliWomen}" IsSelected="True"/>
             <ComboBoxItem x:Name="Men" Content="{x:Static lang:Resources.sddliMen}"/>
         </ComboBox>
 
-        <Label Grid.Row="2" Content="{x:Static lang:Resources.sdlblLanguage}"></Label>
-        <ComboBox Grid.Column="1" Grid.Row="2" x:Name="ddlLanguage" SelectionChanged="ddlLanguage_SelectionChanged">
+        <Label Grid.Row="2" Content="{x:Static lang:Resources.sdlblLanguage}" HorizontalAlignment="Right" Margin="115,0,0,0" Width="100" Foreground="White" VerticalAlignment="Center"></Label>
+        <ComboBox Grid.Column="1" Grid.Row="2" x:Name="ddlLanguage" SelectionChanged="ddlLanguage_SelectionChanged" Margin="3,3,3,0" Height="33" VerticalAlignment="Center" HorizontalAlignment="Left">
             <ComboBoxItem x:Name="en" Content="{x:Static lang:Resources.sddliEnglish}" IsSelected="True"/>
             <ComboBoxItem x:Name="hr" Content="{x:Static lang:Resources.sddliCroatian}"/>
         </ComboBox>
 
-        <Label Grid.Row="3" Content="{x:Static lang:Resources.sdlblResolution}"></Label>
-        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="ddlSize">
+        <Label Grid.Row="2" Content="Window size:" Margin="0,46,0,0" Grid.RowSpan="2" Width="121" Foreground="White" VerticalAlignment="Top"/>
+        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="ddlSize" Margin="3,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
             <ComboBoxItem x:Name="Small" Content="{x:Static lang:Resources.sdddliSmall}" IsSelected="True"/>
             <ComboBoxItem x:Name="Medium" Content="{x:Static lang:Resources.sdddliMedium}"/>
             <ComboBoxItem x:Name="Maximize" Content="{x:Static lang:Resources.sdddliMaximize}"/>
         </ComboBox>
 
-        <Button Grid.Row="4" Grid.Column="2" 
+        <Button Grid.Row="4" Grid.Column="0" 
                 HorizontalAlignment="Left" Click="BtnExit_Click" 
-                Content="{x:Static lang:Resources.btnClose}"></Button>
-        <Button Grid.Row="4" Grid.Column="2"
-                HorizontalAlignment="Right" Click="BtnSave_Click" 
-                Content="{x:Static lang:Resources.sdbtnNext}"></Button>
+                Content="{x:Static lang:Resources.btnClose}" Height="53" Margin="30,0,0,0" VerticalAlignment="Top" Width="110" FontSize="10" FontWeight="Bold" Background="#CC000000" Foreground="#FFFFFBFB"></Button>
+        <Button Grid.Row="4" Grid.Column="0"
+                HorizontalAlignment="Left" Click="BtnSave_Click" 
+                Content="{x:Static lang:Resources.sdbtnNext}" Height="53" VerticalAlignment="Top" Width="110" Margin="188,0,0,0" Foreground="#FFFBF9F9" BorderBrush="Black" FontSize="10" FontWeight="Bold" Background="#CC000000"></Button>
     </Grid>
 </Window>

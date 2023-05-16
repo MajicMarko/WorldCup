@@ -139,7 +139,7 @@
     <value>Result</value>
   </data>
   <data name="gTitle" xml:space="preserve">
-    <value>Game</value>
+    <value>MainWindow</value>
   </data>
   <data name="lblCaptainText" xml:space="preserve">
     <value>Captain</value>
@@ -154,7 +154,7 @@
     <value>Message</value>
   </data>
   <data name="pdlblCapetan" xml:space="preserve">
-    <value>Capetan:</value>
+    <value>Captain:</value>
   </data>
   <data name="pdlblGoals" xml:space="preserve">
     <value>Goals scored:</value>

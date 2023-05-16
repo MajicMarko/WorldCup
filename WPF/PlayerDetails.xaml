@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
-        Title="{x:Static lang:Resources.pdTitle}" Height="250" Width="300">
+        Title="{x:Static lang:Resources.pdTitle}" Height="369" Width="220">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="\images\bg3.jpg" />
+        </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
@@ -17,7 +19,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.Triggers>
@@ -31,15 +33,15 @@
                 </EventTrigger.Actions>
             </EventTrigger>
         </Grid.Triggers>
-        <Label x:Name="lblName" Content="Luka Modric"/>
-        <Label Grid.Column="1" x:Name="lblNumber" Content="10"/>
-        <Image x:Name="imgPlayer" Grid.Column="2" Grid.RowSpan="6" Source="/default.png" Height="150" Width="150"/>
-        <Label Grid.Row="1" Content="{x:Static lang:Resources.pdlblCapetan}"/>
-        <Label Grid.Row="1" Grid.Column="1" x:Name="lblIsCapetan" Content="Capetan"/>
-        <Label Grid.Row="2" Content="{x:Static lang:Resources.pdlblGoals}"/>
-        <Label Grid.Row="2" Grid.Column="1" x:Name="lblGoals" Content="10"/>
-        <Label Grid.Row="3" Content="{x:Static lang:Resources.pdlblYellowCards}"/>
-        <Label Grid.Row="3" Grid.Column="1" x:Name="lblYellowCards" Content="10"/>
-        <Button Grid.Row="5" Content="{x:Static lang:Resources.btnClose}" Click="Button_Click" Margin="5"/>
+        <Image x:Name="imgPlayer" Source="IMAGES/default.png" Height="150" Grid.ColumnSpan="2" Margin="35,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Grid.Row="1"  x:Name="lblName" Content="Luka Modric" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right"/>
+        <Label Grid.Row="1" Grid.Column="1" x:Name="lblNumber" Content="10" Foreground="White" FontWeight="Bold"/>
+        <Label Grid.Row="2" Content="{x:Static lang:Resources.pdlblCapetan}" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right"/>
+        <Label Grid.Row="2" Grid.Column="1" x:Name="lblIsCapetan" Content="Capetan" Foreground="White" FontWeight="Bold"/>
+        <Label Grid.Row="3" Content="{x:Static lang:Resources.pdlblGoals}" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right"/>
+        <Label Grid.Row="3" Grid.Column="1" x:Name="lblGoals" Content="10" Foreground="White" FontWeight="Bold"/>
+        <Label Grid.Row="4" Content="{x:Static lang:Resources.pdlblYellowCards}" Foreground="#FFFBF4F4" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold"/>
+        <Label Grid.Row="4" Grid.Column="1" x:Name="lblYellowCards" Content="10" Foreground="#FFFBF4F4" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
+        <Button Grid.Row="5" Grid.ColumnSpan="2" Content="{x:Static lang:Resources.btnClose}" Click="Button_Click" Margin="50,45,20,55" Background="#66000000" FontWeight="Bold" Foreground="#FFFFFBFB" />
     </Grid>
 </Window>

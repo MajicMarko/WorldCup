@@ -5,29 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
-        Title="{x:Static lang:Resources.tdTitle}" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="{x:Static lang:Resources.tdTitle}" Height="365" Width="800" MinHeight="450" MinWidth="800">
     <Window.Resources>
-    <Style TargetType="{x:Type Label}">
-        <Setter Property="Margin" Value="3"/>
-        <Setter Property="FontSize" Value="25" />
-    </Style>
-    <Style TargetType="{x:Type Button}">
-        <Setter Property="VerticalAlignment" Value="Bottom" />
-        <Setter Property="Margin" Value="3" />
-        <Setter Property="Padding" Value="10, 5" />
-        <Setter Property="FontSize" Value="20" />
-    </Style>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="25" />
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="Padding" Value="10, 5" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Height="475" VerticalAlignment="Top">
+        <Grid.Background>
+            <ImageBrush ImageSource="\images\bg3.jpg" />
+        </Grid.Background>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="300"/>
+
         </Grid.ColumnDefinitions>
         <Grid.Triggers>
             <EventTrigger RoutedEvent="Grid.Loaded">
@@ -42,45 +47,44 @@
         </Grid.Triggers>
 
 
-        <StackPanel Orientation="Horizontal" >
-            <Label x:Name="lblTeamName" FontSize="40" Content="Team name"/>
-            <Label x:Name="lblFifaCode" FontSize="40" FontWeight="Bold" Content="Fifa code"/>
-        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Label Content="{x:Static lang:Resources.tdlblGamesPlayed}"/>
-            <Label x:Name="lblGamesPlayed"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Label Content="{x:Static lang:Resources.tdlblGamesPlayed}" Foreground="White" VerticalAlignment="Center" Width="263" HorizontalContentAlignment="Right"/>
+            <Label x:Name="lblGamesPlayed" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <StackPanel Grid.Row="2">
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static lang:Resources.tdlblWins}"/>
-                <Label x:Name="lblGameWins"/>
+                <Label Content="{x:Static lang:Resources.tdlblWins}" Foreground="White" Width="261" HorizontalContentAlignment="Right"/>
+                <Label x:Name="lblGameWins" Foreground="White" FontWeight="Bold"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static lang:Resources.tdlblLosses}"/>
-                <Label x:Name="lblGameLosses"/>
+                <Label Content="{x:Static lang:Resources.tdlblLosses}" Foreground="White" Width="261" HorizontalContentAlignment="Right"/>
+                <Label x:Name="lblGameLosses" Foreground="White" FontWeight="Bold"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static lang:Resources.tdlblDraws}"/>
-                <Label x:Name="lblGameDraws"/>
+                <Label Content="{x:Static lang:Resources.tdlblDraws}" Foreground="White" Width="257" HorizontalContentAlignment="Right"/>
+                <Label x:Name="lblGameDraws" FontWeight="Bold" Foreground="White"/>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Label Content="{x:Static lang:Resources.tdlblGoalsDifferential}"/>
-            <Label x:Name="lblGoalsDifferential"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="{x:Static lang:Resources.tdlblGoalsDifferential}" Foreground="White" VerticalAlignment="Center"/>
+            <Label x:Name="lblGoalsDifferential" Width="178" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static lang:Resources.tdlblGoalsGiven}"/>
-                <Label x:Name="lblGoalsFor"/>
+                <Label Content="{x:Static lang:Resources.tdlblGoalsGiven}" Foreground="White"/>
+                <Label x:Name="lblGoalsFor" FontWeight="Bold" Foreground="White"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static lang:Resources.tdlblGaolsTaken}"/>
-                <Label x:Name="lblGoalsAgainst"/>
+                <Label Content="{x:Static lang:Resources.tdlblGaolsTaken}" Foreground="White"/>
+                <Label x:Name="lblGoalsAgainst" Foreground="White" FontWeight="Bold"/>
             </StackPanel>
         </StackPanel>
 
-        <Button Grid.Row="3" Click="Button_Click" Content="{x:Static lang:Resources.btnClose}"/>
+        <Button Grid.Row="3" Click="Button_Click" Content="{x:Static lang:Resources.btnClose}" Margin="203,21,103,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#4C000000" Foreground="#FFF9F9F9" FontWeight="Bold"/>
+        <Label x:Name="lblTeamName" FontSize="40" Content="Team name" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="178,0,0,0"/>
+        <Label x:Name="lblFifaCode" FontSize="40" FontWeight="Bold" Content="Fifa code" Foreground="White" Margin="10,18,40,18" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
     </Grid>
 </Window>
