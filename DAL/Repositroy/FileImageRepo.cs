@@ -7,8 +7,8 @@ namespace DAL.Repositroy
 {
     public class FileImageRepo : IImageRepo
     {
-        private static readonly string DIR = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\temp";
-        private static readonly string PATH = DIR + "/images.txt";
+        private static readonly string DIR = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName + "\\WorldCup\\temp";
+        private static readonly string PATH = DIR + "\\images.txt";
         private static readonly char DEL = '|';
 
         private void CreateFilesIfNonExistent()

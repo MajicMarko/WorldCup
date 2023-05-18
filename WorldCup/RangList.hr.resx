@@ -164,7 +164,7 @@
     <value>Rang liste</value>
   </data>
   <data name="btnChangeSettings.Text" xml:space="preserve">
-    <value>Promjeni postavke</value>
+    <value>Postavke</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Zatvori</value>

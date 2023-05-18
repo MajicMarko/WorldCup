@@ -38,7 +38,7 @@
             this.pnlAllPlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.playerContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.moveToFavouretesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlFavoretePlayers = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlFavoritePlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.ddlRepresentation = new System.Windows.Forms.ComboBox();
             this.lblTilte = new System.Windows.Forms.Label();
             this.playerContextMenuStrip.SuspendLayout();
@@ -83,6 +83,8 @@
             // 
             this.pnlAllPlayers.AllowDrop = true;
             resources.ApplyResources(this.pnlAllPlayers, "pnlAllPlayers");
+            this.pnlAllPlayers.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAllPlayers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlAllPlayers.ContextMenuStrip = this.playerContextMenuStrip;
             this.pnlAllPlayers.Name = "pnlAllPlayers";
             this.pnlAllPlayers.DragDrop += new System.Windows.Forms.DragEventHandler(this.pnlPlayers_DragDrop);
@@ -103,14 +105,16 @@
             resources.ApplyResources(this.moveToFavouretesToolStripMenuItem, "moveToFavouretesToolStripMenuItem");
             this.moveToFavouretesToolStripMenuItem.Click += new System.EventHandler(this.moveToOtherList_Click);
             // 
-            // pnlFavoretePlayers
+            // pnlFavoritePlayers
             // 
-            this.pnlFavoretePlayers.AllowDrop = true;
-            resources.ApplyResources(this.pnlFavoretePlayers, "pnlFavoretePlayers");
-            this.pnlFavoretePlayers.ContextMenuStrip = this.playerContextMenuStrip;
-            this.pnlFavoretePlayers.Name = "pnlFavoretePlayers";
-            this.pnlFavoretePlayers.DragDrop += new System.Windows.Forms.DragEventHandler(this.pnlPlayers_DragDrop);
-            this.pnlFavoretePlayers.DragEnter += new System.Windows.Forms.DragEventHandler(this.pnlPlayers_DragEnter);
+            this.pnlFavoritePlayers.AllowDrop = true;
+            resources.ApplyResources(this.pnlFavoritePlayers, "pnlFavoritePlayers");
+            this.pnlFavoritePlayers.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFavoritePlayers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFavoritePlayers.ContextMenuStrip = this.playerContextMenuStrip;
+            this.pnlFavoritePlayers.Name = "pnlFavoritePlayers";
+            this.pnlFavoritePlayers.DragDrop += new System.Windows.Forms.DragEventHandler(this.pnlPlayers_DragDrop);
+            this.pnlFavoritePlayers.DragEnter += new System.Windows.Forms.DragEventHandler(this.pnlPlayers_DragEnter);
             // 
             // ddlRepresentation
             // 
@@ -133,7 +137,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.lblTilte);
             this.Controls.Add(this.ddlRepresentation);
-            this.Controls.Add(this.pnlFavoretePlayers);
+            this.Controls.Add(this.pnlFavoritePlayers);
             this.Controls.Add(this.pnlAllPlayers);
             this.Controls.Add(this.lblAllPlayers);
             this.Controls.Add(this.btnClose);
@@ -154,7 +158,7 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblFavPlayers;
         private System.Windows.Forms.FlowLayoutPanel pnlAllPlayers;
-        private System.Windows.Forms.FlowLayoutPanel pnlFavoretePlayers;
+        private System.Windows.Forms.FlowLayoutPanel pnlFavoritePlayers;
         private System.Windows.Forms.ContextMenuStrip playerContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem moveToFavouretesToolStripMenuItem;
         private ComboBox ddlRepresentation;

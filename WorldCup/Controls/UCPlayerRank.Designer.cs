@@ -49,7 +49,9 @@
             // 
             // lblName
             // 
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblName.ForeColor = System.Drawing.Color.Black;
             this.lblName.Location = new System.Drawing.Point(68, 13);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(266, 41);
@@ -58,7 +60,9 @@
             // 
             // lblApearences
             // 
-            this.lblApearences.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblApearences.BackColor = System.Drawing.Color.Transparent;
+            this.lblApearences.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblApearences.ForeColor = System.Drawing.Color.Black;
             this.lblApearences.Location = new System.Drawing.Point(334, 13);
             this.lblApearences.Name = "lblApearences";
             this.lblApearences.Size = new System.Drawing.Size(126, 29);
@@ -68,7 +72,9 @@
             // 
             // lblGoalsScored
             // 
-            this.lblGoalsScored.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGoalsScored.BackColor = System.Drawing.Color.Transparent;
+            this.lblGoalsScored.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblGoalsScored.ForeColor = System.Drawing.Color.Black;
             this.lblGoalsScored.Location = new System.Drawing.Point(466, 13);
             this.lblGoalsScored.Name = "lblGoalsScored";
             this.lblGoalsScored.Size = new System.Drawing.Size(127, 29);
@@ -78,7 +84,9 @@
             // 
             // lblYellowCard
             // 
-            this.lblYellowCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblYellowCard.BackColor = System.Drawing.Color.Transparent;
+            this.lblYellowCard.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblYellowCard.ForeColor = System.Drawing.Color.Black;
             this.lblYellowCard.Location = new System.Drawing.Point(608, 13);
             this.lblYellowCard.Name = "lblYellowCard";
             this.lblYellowCard.Size = new System.Drawing.Size(66, 29);
@@ -90,6 +98,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.lblYellowCard);
             this.Controls.Add(this.lblGoalsScored);
             this.Controls.Add(this.lblApearences);

@@ -1,7 +1,3 @@
 Men
-en
+hr
 Small
-Croatia|CRO
-Danijel SUBASIC|False|23|Goalie
-Sime VRSALJKO|False|2|Defender
-Ivan STRINIC|False|3|Defender

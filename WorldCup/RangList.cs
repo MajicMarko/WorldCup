@@ -38,14 +38,14 @@ namespace WorldCup
         {
             lblError.Text = (settings.Language.ToString() == "en") ? "Loading data..." : "Učitavanje podataka...";
             lblError.Visible = true;
-            string fifaCode = settings.FavoreteRepresentation.FifaCode;
+            string fifaCode = settings.FavoriteRepresentation.FifaCode;
             try
             {
                 matches = await repo.LoadTeamRankings(fifaCode);
                 players = await repo.LoadPlayerRankings(fifaCode);
                 foreach (Player player in players)
                 {
-                    if (settings.FavoretePlayers.FirstOrDefault(p => player.Name == p.Name) != null)
+                    if (settings.FavoritePlayers.FirstOrDefault(p => player.Name == p.Name) != null)
                     {
                         player.Favorete = true;
                     }

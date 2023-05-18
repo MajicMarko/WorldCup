@@ -86,9 +86,9 @@ namespace WPF
             teams.ToList().Sort();
             teams.ToList().ForEach(t => ddlHomeTeam.Items.Add(t));
 
-            if (settings.FavoreteRepresentation != null || (ddlHomeTeam.SelectedItem = settings.FavoreteRepresentation) == null)
+            if (settings.FavoriteRepresentation != null || (ddlHomeTeam.SelectedItem = settings.FavoriteRepresentation) == null)
             {
-                ddlHomeTeam.SelectedItem = settings.FavoreteRepresentation;
+                ddlHomeTeam.SelectedItem = settings.FavoriteRepresentation;
             }
             else
             {

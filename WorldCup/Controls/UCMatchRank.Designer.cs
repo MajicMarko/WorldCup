@@ -42,6 +42,7 @@
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
+            this.lblLocation.BackColor = System.Drawing.Color.Transparent;
             this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLocation.Location = new System.Drawing.Point(63, 9);
             this.lblLocation.Name = "lblLocation";
@@ -51,6 +52,7 @@
             // 
             // lblHomeTeam
             // 
+            this.lblHomeTeam.BackColor = System.Drawing.Color.Transparent;
             this.lblHomeTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblHomeTeam.Location = new System.Drawing.Point(3, 60);
             this.lblHomeTeam.Name = "lblHomeTeam";
@@ -60,6 +62,7 @@
             // 
             // lblAwayTeam
             // 
+            this.lblAwayTeam.BackColor = System.Drawing.Color.Transparent;
             this.lblAwayTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAwayTeam.Location = new System.Drawing.Point(218, 60);
             this.lblAwayTeam.Name = "lblAwayTeam";
@@ -71,6 +74,7 @@
             // lblAttendance
             // 
             this.lblAttendance.AutoSize = true;
+            this.lblAttendance.BackColor = System.Drawing.Color.Transparent;
             this.lblAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAttendance.Location = new System.Drawing.Point(333, 3);
             this.lblAttendance.Name = "lblAttendance";
@@ -81,6 +85,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(444, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -91,6 +96,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(3, 0);
             this.pictureBox2.Name = "pictureBox2";
@@ -103,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);

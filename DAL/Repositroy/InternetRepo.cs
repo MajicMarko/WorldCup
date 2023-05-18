@@ -38,7 +38,7 @@ namespace DAL.Repositroy
 
         public async Task<IList<Player>> LoadPlayers(string fifaCode)
         {
-            URL = $"https://worldcup-vua.nullbit.hr/{REPRESENTATION}/matches/country?fifa_code=" + fifaCode;
+            URL = "https://worldcup-vua.nullbihttps://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifaCode;
             IList<Match> matches = new List<Match>();
             IList<Player> players = new List<Player>();
             IList<TeamStatistics> teams = new List<TeamStatistics>();
@@ -77,7 +77,7 @@ namespace DAL.Repositroy
 
         public async Task<IList<Team>> LoadTeams(Settings settings)
         {
-            URL = $"https://worldcup-vua.nullbit.hr/{REPRESENTATION}/teams/results";
+            URL = $"https://worldcup-vua.nullbit.hr/men/teams/results";
             IList<Team> teams = new List<Team>();
             RestResponse<IList<Team>> restResponse = await GetData<IList<Team>>(URL);
             teams = (IList<Team>)Desserialize<IList<Team>>(restResponse);
@@ -86,7 +86,7 @@ namespace DAL.Repositroy
 
         public async Task<Team> LoadTeam(string fifaCode)
         {
-            URL = $"https://worldcup-vua.nullbit.hr/{REPRESENTATION}/teams/results";
+            URL = $"https://worldcup-vua.nullbit.hr/men/teams/results";
             Team team = new Team();
             IList<Team> teams = new List<Team>();
             RestResponse<IList<Team>> restResponse = await GetData<IList<Team>>(URL);
@@ -97,7 +97,7 @@ namespace DAL.Repositroy
 
         public async Task<IList<Match>> LoadTeamRankings(string fifaCode)
         {
-            URL = $"https://worldcup-vua.nullbit.hr/{REPRESENTATION}/matches/country?fifa_code=" + fifaCode;
+            URL = $"https://worldcup-vua.nullbihttps://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifaCode;
             IList<Match> matches = new List<Match>();
             RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(URL);
             matches = (IList<Match>)Desserialize<IList<Match>>(restResponse);
@@ -106,7 +106,7 @@ namespace DAL.Repositroy
 
         public async Task<IList<Match>> LoadMatches()
         {
-            URL = $"https://worldcup-vua.nullbit.hr/{REPRESENTATION}/teams/results";
+            URL = "https://worldcup-vua.nullbit.hr/men/teams/results";
             IList<Match> matches = new List<Match>();
             RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(URL);
             matches = (IList<Match>)Desserialize<IList<Match>>(restResponse);
@@ -115,7 +115,7 @@ namespace DAL.Repositroy
 
         public async Task<IList<Player>> LoadPlayerRankings(string fifaCode)
         {
-            URL = $"https://worldcup-vua.nullbit.hr/{REPRESENTATION}/matches/country?fifa_code=" + fifaCode;
+            URL = "https://worldcup-vua.nullbihttps://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifaCode;
             IList<Match> matches = new List<Match>();
             IList<Player> players = new List<Player>();
             IList<TeamStatistics> teams = new List<TeamStatistics>();

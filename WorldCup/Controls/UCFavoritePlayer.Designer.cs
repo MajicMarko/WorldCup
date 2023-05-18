@@ -41,7 +41,9 @@
             // 
             // lblPlayerName
             // 
-            this.lblPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPlayerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerName.Font = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPlayerName.ForeColor = System.Drawing.Color.White;
             this.lblPlayerName.Location = new System.Drawing.Point(12, 11);
             this.lblPlayerName.Name = "lblPlayerName";
             this.lblPlayerName.Size = new System.Drawing.Size(285, 45);
@@ -51,28 +53,35 @@
             // lblPlayerNumber
             // 
             this.lblPlayerNumber.AutoSize = true;
-            this.lblPlayerNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayerNumber.Location = new System.Drawing.Point(3, 75);
+            this.lblPlayerNumber.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerNumber.Font = new System.Drawing.Font("Berlin Sans FB Demi", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPlayerNumber.ForeColor = System.Drawing.Color.White;
+            this.lblPlayerNumber.Location = new System.Drawing.Point(29, 46);
             this.lblPlayerNumber.Name = "lblPlayerNumber";
-            this.lblPlayerNumber.Size = new System.Drawing.Size(112, 79);
+            this.lblPlayerNumber.Size = new System.Drawing.Size(138, 109);
             this.lblPlayerNumber.TabIndex = 1;
             this.lblPlayerNumber.Text = "10";
+            this.lblPlayerNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblPlayerPosition
             // 
             this.lblPlayerPosition.AutoSize = true;
-            this.lblPlayerPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayerPosition.Location = new System.Drawing.Point(12, 175);
+            this.lblPlayerPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerPosition.Font = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPlayerPosition.ForeColor = System.Drawing.Color.White;
+            this.lblPlayerPosition.Location = new System.Drawing.Point(196, 178);
             this.lblPlayerPosition.Name = "lblPlayerPosition";
-            this.lblPlayerPosition.Size = new System.Drawing.Size(117, 32);
+            this.lblPlayerPosition.Size = new System.Drawing.Size(101, 27);
             this.lblPlayerPosition.TabIndex = 2;
             this.lblPlayerPosition.Text = "Position";
             // 
             // lblPlayerCapetan
             // 
             this.lblPlayerCapetan.AutoSize = true;
+            this.lblPlayerCapetan.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayerCapetan.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayerCapetan.Location = new System.Drawing.Point(131, 112);
+            this.lblPlayerCapetan.ForeColor = System.Drawing.Color.White;
+            this.lblPlayerCapetan.Location = new System.Drawing.Point(142, 109);
             this.lblPlayerCapetan.Name = "lblPlayerCapetan";
             this.lblPlayerCapetan.Size = new System.Drawing.Size(67, 69);
             this.lblPlayerCapetan.TabIndex = 3;
@@ -80,8 +89,9 @@
             // 
             // imgPlayer
             // 
+            this.imgPlayer.BackColor = System.Drawing.Color.Transparent;
             this.imgPlayer.Image = ((System.Drawing.Image)(resources.GetObject("imgPlayer.Image")));
-            this.imgPlayer.Location = new System.Drawing.Point(226, 46);
+            this.imgPlayer.Location = new System.Drawing.Point(208, 46);
             this.imgPlayer.Name = "imgPlayer";
             this.imgPlayer.Size = new System.Drawing.Size(125, 108);
             this.imgPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,8 +101,9 @@
             // 
             // imgFavorite
             // 
+            this.imgFavorite.BackColor = System.Drawing.Color.Transparent;
             this.imgFavorite.Image = ((System.Drawing.Image)(resources.GetObject("imgFavorite.Image")));
-            this.imgFavorite.Location = new System.Drawing.Point(131, 59);
+            this.imgFavorite.Location = new System.Drawing.Point(142, 46);
             this.imgFavorite.Name = "imgFavorite";
             this.imgFavorite.Size = new System.Drawing.Size(60, 60);
             this.imgFavorite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -105,6 +116,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(187)))), ((int)(((byte)(234)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.imgFavorite);
             this.Controls.Add(this.imgPlayer);
             this.Controls.Add(this.lblPlayerCapetan);

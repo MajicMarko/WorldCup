@@ -45,13 +45,13 @@ namespace DAL.Model
 
         public Settings Load()
         {
-            return settingsRepo.LoadSettings();
+            return settingsRepo.LoadFavoritePlayers();
         }
 
         public LanguageE Language { get; set; }
         public WindowSizeE Size { get; set; }
-        public Team FavoreteRepresentation { get; set; }
-        public IList<Player> FavoretePlayers { get; set; }
+        public Team FavoriteRepresentation { get; set; }
+        public IList<Player> FavoritePlayers { get; set; }
 
 
         public void Save(Settings settings)

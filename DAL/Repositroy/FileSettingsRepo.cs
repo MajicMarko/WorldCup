@@ -10,8 +10,9 @@ namespace DAL.Repositroy
 {
     public class FileSettingsRepo : ISettingsRepo
     {
-        private static readonly string DIR = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"/temp";
-        private static readonly string PATH = DIR + "/settings.txt";
+        private static readonly string DIR = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName + "\\WorldCup\\temp";
+        private static readonly string PATH = DIR + "\\settings.txt";
+        private static readonly string PATH2 = DIR + "\\players.txt";
 
         public FileSettingsRepo()
         {
@@ -27,23 +28,47 @@ namespace DAL.Repositroy
             }
         }
 
+        private void CreateFilesForPlayersIfNonExistent()
+        {
+            Directory.CreateDirectory(DIR);
+            if (!File.Exists(PATH2))
+            {
+                File.Create(PATH2).Close();
+            }
+        }
+
+        public Settings LoadFavoritePlayers()
+        {
+            Settings settings = new Settings();
+            string[] lines = File.ReadAllLines(PATH2);
+            IList<Player> players = new List<Player>();
+            settings.FavoritePlayers = new List<Player>();
+
+
+            if (lines.Length!=0)
+            {
+                settings.FavoriteRepresentation = Team.ParseFromFile(lines[0]);
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    players.Add(Player.ParseFromFileLine(lines[i]));
+                }
+                players.ToList().ForEach(p => settings.FavoritePlayers.Add(p));
+            }
+
+
+
+            return settings;
+        }
+
         public Settings LoadSettings()
         {
             Settings settings = new Settings();
             string[] lines = File.ReadAllLines(PATH);
-            IList<Player> players = new List<Player>();
-            settings.FavoretePlayers = new List<Player>();
+ 
 
             settings.Championship = (ChampionshipE)Enum.Parse(typeof(ChampionshipE), lines[0]);
             settings.Language = (LanguageE)Enum.Parse(typeof(LanguageE), lines[1]);
             settings.Size = (WindowSizeE)Enum.Parse(typeof(WindowSizeE), lines[2]);
-
-            settings.FavoreteRepresentation = Team.ParseFromFile(lines[3]);
-            for (int i = 4; i < lines.Length; i++)
-            {
-                players.Add(Player.ParseFromFileLine(lines[i]));
-            }
-            players.ToList().ForEach(p => settings.FavoretePlayers.Add(p));
 
             return settings;
         }
@@ -63,20 +88,31 @@ namespace DAL.Repositroy
         {
             IList<string> lines = new List<string>
             {
-                settings.FavoreteRepresentation.ParseForFileLine()
+                settings.FavoriteRepresentation.ParseForFileLine()
             };
-            foreach (Player player in settings.FavoretePlayers)
+            foreach (Player player in settings.FavoritePlayers)
             {
                 lines.Add(player.ParseForFileLine());
             }
-            File.AppendAllLines(PATH, lines.ToArray());
+            File.WriteAllLines(PATH2, lines.ToArray());
         }
 
         public bool ExistingSettings()
         {
             string[] lines = File.ReadAllLines(PATH);
 
-            if (lines.Length >= 7)
+            if (lines.Length >= 3)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public bool ExistingPlayers()
+        {
+            string[] lines = File.ReadAllLines(PATH2);
+
+            if (lines.Length >= 4)
             {
                 return true;
             }

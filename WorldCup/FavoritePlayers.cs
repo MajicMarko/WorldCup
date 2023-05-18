@@ -27,33 +27,34 @@ namespace WorldCup
             Thread.CurrentThread.CurrentUICulture = culture;
             InitializeComponent();
             PrepareDataForDropDownMenu();
-            checkSetting();
             this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 
-        private void checkSetting()
-        {
-            if (settings.Exists())
-            {
-                PrepareDataForPanel();
 
-            }
-        }
         private async Task PrepareDataForDropDownMenu()
         {
-            lblError.Text = (settings.Language.ToString() == "en") ? "Loading data..." : "Učitavanje podataka...";
 
-            lblError.Visible = true;
 
 
             try
             {
+                lblError.Text = (settings.Language.ToString() == "en") ? "Loading data..." : "Učitavanje podataka...";
+                lblError.Visible = true;
 
                 teams = await repo.LoadTeams(settings);
                 teams.ToList().Sort();
                 teams.ToList().ForEach(t => ddlRepresentation.Items.Add(t.ToString()));
-                //ddlRepresentation.SelectedIndex = 0;
+
+                for (int i = 0; i < ddlRepresentation.Items.Count; i++)
+                {
+                    if (ddlRepresentation.Items[i].ToString() == $"{settings.FavoriteRepresentation}")
+                    {
+                        ddlRepresentation.SelectedIndex = i;
+                        break;
+                    }
+                }
+
                 lblError.Visible = false;
             }
             catch (Exception ex)
@@ -62,17 +63,17 @@ namespace WorldCup
                 btnNext.Enabled = false;
                 lblError.Show();
             }
-            lblError.Visible = false;
+            //lblError.Visible = false;
 
 
         }
         private async void PrepareDataForPanel()
         {
-            lblError.Text = (settings.Language.ToString() == "en") ? "Loading data..." : "Učitavanje podataka...";
             lblError.Visible = true;
+            lblError.Text = (settings.Language.ToString() == "en") ? "Loading data..." : "Učitavanje podataka...";
             try
             {
-                allPlayers = await repo.LoadPlayers(settings.FavoreteRepresentation.FifaCode);
+                allPlayers = await repo.LoadPlayers(settings.FavoriteRepresentation.FifaCode);
                 ShowUsers(allPlayers);
             }
             catch (Exception)
@@ -90,20 +91,19 @@ namespace WorldCup
                 UCFavoritePlayer playerSelection = new UCFavoritePlayer(images)
                 {
                     Name = player.Name,
-                    ContextMenuStrip = playerContextMenuStrip
                 };
                 playerSelection.LoadData(player.Name, player.ShirtNumber, player.Position, player.Captain);
                 playerSelection.MouseDown += PlayerSelection_MouseDown;
 
                 pnlAllPlayers.Controls.Add(playerSelection);
-                if (settings.FavoretePlayers != null)
+                if (settings.FavoritePlayers != null)
                 {
-                    foreach (var item in settings.FavoretePlayers)
+                    foreach (var item in settings.FavoritePlayers)
                     {
                         if (player.Name == item.Name)
                         {
                             playerSelection.SetFav();
-                            pnlFavoretePlayers.Controls.Add(playerSelection);
+                            pnlFavoritePlayers.Controls.Add(playerSelection);
                         }
                     }
                 }
@@ -116,7 +116,7 @@ namespace WorldCup
         {
 
             pnlAllPlayers.Controls.Clear();
-            pnlFavoretePlayers.Controls.Clear();
+            pnlFavoritePlayers.Controls.Clear();
 
             if (ddlRepresentation.SelectedItem == null)
             {
@@ -127,32 +127,14 @@ namespace WorldCup
             string selectedText = ddlRepresentation.SelectedItem.ToString();
             string countryCode = Regex.Match(selectedText, @"\((.*?)\)").Groups[1].Value;
             Team selectedTeam = teams.FirstOrDefault(t => t.FifaCode == countryCode);
-            settings.FavoreteRepresentation = selectedTeam;
+            settings.FavoriteRepresentation = selectedTeam;
             PrepareDataForPanel();
 
         }
 
 
 
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (pnlFavoretePlayers.Controls.Count != 3)
-            {
-                lblError.Text = (settings.Language.ToString() == "en") ? "Select 3 players" : "Odaberi 3 igrača";
-                lblError.Visible = true;
-                return;
-            }
-            IList<Player> favoretes = new List<Player>();
-            foreach (UCFavoritePlayer favourete in pnlFavoretePlayers.Controls)
-            {
-                favoretes.Add(favourete.GetPlayer());
-            }
-            settings.FavoretePlayers = favoretes;
-            settings.Save(settings);
-            settings.SavePlayers(settings);
-
-            OpenNextForm(settings);
-        }
+        
 
         private void OpenNextForm(Settings settings)
         {
@@ -209,21 +191,39 @@ namespace WorldCup
             if (parent == pnlAllPlayers)
             {
                 favoritePlayers.ToList().ForEach(player => player.SetFav());
-                favoritePlayers.ToList().ForEach(player => pnlFavoretePlayers.Controls.Add(player));
+                favoritePlayers.ToList().ForEach(player => pnlFavoritePlayers.Controls.Add(player));
                 favoritePlayers.ToList().ForEach(player => pnlAllPlayers.Controls.Remove(player));
             }
-            if (parent == pnlFavoretePlayers)
+            if (parent == pnlFavoritePlayers)
             {
                 favoritePlayers.ToList().ForEach(player => player.SetNotFav());
                 favoritePlayers.ToList().ForEach(player => pnlAllPlayers.Controls.Add(player));
-                favoritePlayers.ToList().ForEach(player => pnlFavoretePlayers.Controls.Remove(player));
+                favoritePlayers.ToList().ForEach(player => pnlFavoritePlayers.Controls.Remove(player));
             }
             favoritePlayers.ToList().ForEach(player => player.BackColor = Color.DarkGray);
             favoritePlayers.Clear();
         }
 
 
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (pnlFavoritePlayers.Controls.Count != 3)
+            {
+                lblError.Text = (settings.Language.ToString() == "en") ? "Select 3 players" : "Odaberi 3 igrača";
+                lblError.Visible = true;
+                return;
+            }
+            IList<Player> favoretes = new List<Player>();
+            foreach (UCFavoritePlayer favourete in pnlFavoritePlayers.Controls)
+            {
+                favoretes.Add(favourete.GetPlayer());
+            }
+            settings.FavoritePlayers = favoretes;
+            settings.Save(settings);
+            settings.SavePlayers(settings);
 
+            OpenNextForm(settings);
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             Exit exitForm = new Exit();

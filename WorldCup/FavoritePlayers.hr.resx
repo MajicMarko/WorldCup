@@ -149,7 +149,7 @@
   <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="btnBack.Text" xml:space="preserve">
+  <data name="btnClose.Text" xml:space="preserve">
     <value>Zatvori</value>
   </data>
   <data name="btnNext.Font" type="System.Drawing.Font, System.Drawing">
@@ -167,22 +167,22 @@
   <data name="btnNext.Text" xml:space="preserve">
     <value>Dalje</value>
   </data>
-  <data name="lblFavoretePlayersError.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblFavoritePlayersError.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 22pt</value>
   </data>
-  <data name="lblFavoretePlayersError.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblFavoritePlayersError.Location" type="System.Drawing.Point, System.Drawing">
     <value>486, 160</value>
   </data>
-  <data name="lblFavoretePlayersError.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblFavoritePlayersError.Size" type="System.Drawing.Size, System.Drawing">
     <value>657, 113</value>
   </data>
-  <data name="lblFavoretePlayersError.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblFavoritePlayersError.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="lblFavoretePlayersError.Text" xml:space="preserve">
+  <data name="lblFavoritePlayersError.Text" xml:space="preserve">
     <value>Greška</value>
   </data>
-  <data name="lblFavoretePlayersError.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="lblFavoritePlayersError.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
   <data name="lblFavPlayers.Font" type="System.Drawing.Font, System.Drawing">
@@ -224,16 +224,16 @@
   <data name="moveToFavouretesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
   </data>
-  <data name="pnlFavoretePlayers.AutoScroll" type="System.Boolean, mscorlib">
+  <data name="pnlFavoritePlayers.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="pnlFavoretePlayers.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pnlFavoritePlayers.Location" type="System.Drawing.Point, System.Drawing">
     <value>828, 287</value>
   </data>
-  <data name="pnlFavoretePlayers.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pnlFavoritePlayers.Size" type="System.Drawing.Size, System.Drawing">
     <value>788, 649</value>
   </data>
-  <data name="pnlFavoretePlayers.TabIndex" type="System.Int32, mscorlib">
+  <data name="pnlFavoritePlayers.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="ddlRepresentation.Location" type="System.Drawing.Point, System.Drawing">

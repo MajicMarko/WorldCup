@@ -70,6 +70,8 @@
             // pnlPlayers
             // 
             resources.ApplyResources(this.pnlPlayers, "pnlPlayers");
+            this.pnlPlayers.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPlayers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlPlayers.Name = "pnlPlayers";
             // 
             // lblApp
@@ -94,6 +96,7 @@
             // 
             resources.ApplyResources(this.pnlMatches, "pnlMatches");
             this.pnlMatches.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMatches.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlMatches.Name = "pnlMatches";
             // 
             // groupBox1
