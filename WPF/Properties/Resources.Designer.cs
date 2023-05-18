@@ -70,7 +70,7 @@ namespace WPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open away team.
+        ///   Looks up a localized string similar to Away Team Statistic.
         /// </summary>
         public static string gbtnOpenAwayTeam {
             get {
@@ -79,7 +79,7 @@ namespace WPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open home team.
+        ///   Looks up a localized string similar to Home Team Statistic.
         /// </summary>
         public static string gbtnOpenHomeTeam {
             get {
@@ -381,6 +381,15 @@ namespace WPF.Properties {
         public static string tdTitle {
             get {
                 return ResourceManager.GetString("tdTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string txtMessage {
+            get {
+                return ResourceManager.GetString("txtMessage", resourceCulture);
             }
         }
     }

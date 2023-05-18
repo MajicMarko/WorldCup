@@ -106,6 +106,7 @@
     <EmbeddedResource Include="PictureResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PictureResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -127,22 +128,22 @@
     <None Include="Resources\default.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\bg6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bg5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bg2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg4.jpg" />
+    <Resource Include="Resources\bgStadium.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\bgStadium.jpg" />
+    <None Include="Resources\stadium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spectator.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

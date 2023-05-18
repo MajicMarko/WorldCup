@@ -121,10 +121,10 @@
     <value>Close</value>
   </data>
   <data name="gbtnOpenAwayTeam" xml:space="preserve">
-    <value>Open away team</value>
+    <value>Away Team Statistic</value>
   </data>
   <data name="gbtnOpenHomeTeam" xml:space="preserve">
-    <value>Open home team</value>
+    <value>Home Team Statistic</value>
   </data>
   <data name="gbtnSettings" xml:space="preserve">
     <value>Settings</value>
@@ -224,5 +224,8 @@
   </data>
   <data name="tdTitle" xml:space="preserve">
     <value>Team details</value>
+  </data>
+  <data name="txtMessage" xml:space="preserve">
+    <value />
   </data>
 </root>

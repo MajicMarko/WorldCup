@@ -124,15 +124,6 @@
   <data name="bg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\bg3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\bg4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bg5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\bg5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bg6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\bg6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bgStadium" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\bgStadium.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,5 +132,14 @@
   </data>
   <data name="soccer_field" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\soccer_field.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spectator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\spectator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stadium1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\stadium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

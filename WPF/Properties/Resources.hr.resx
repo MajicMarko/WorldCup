@@ -121,10 +121,10 @@
     <value>Zatvori</value>
   </data>
   <data name="gbtnOpenAwayTeam" xml:space="preserve">
-    <value>Otvori gostujući tim</value>
+    <value>Statistika gostujuće momčadi</value>
   </data>
   <data name="gbtnOpenHomeTeam" xml:space="preserve">
-    <value>Otvori tim domaćin</value>
+    <value>Statistika domaće momčadi</value>
   </data>
   <data name="gbtnSettings" xml:space="preserve">
     <value>Postavke</value>
@@ -202,25 +202,25 @@
     <value>Početne postavke</value>
   </data>
   <data name="tdlblDraws" xml:space="preserve">
-    <value>Izjednačenja</value>
+    <value>Nerješeno:</value>
   </data>
   <data name="tdlblGamesPlayed" xml:space="preserve">
     <value>Odigranih utakmica:</value>
   </data>
   <data name="tdlblGaolsTaken" xml:space="preserve">
-    <value>Dobivenih:</value>
+    <value>Primili golovi:</value>
   </data>
   <data name="tdlblGoalsDifferential" xml:space="preserve">
     <value>Razlika golova:</value>
   </data>
   <data name="tdlblGoalsGiven" xml:space="preserve">
-    <value>Zabijeni:</value>
+    <value>Zabili golova:</value>
   </data>
   <data name="tdlblLosses" xml:space="preserve">
-    <value>Primljeni:</value>
+    <value>Izgubili:</value>
   </data>
   <data name="tdlblWins" xml:space="preserve">
-    <value>Pobjede:</value>
+    <value>Pobjedili:</value>
   </data>
   <data name="tdTitle" xml:space="preserve">
     <value>Detalji o timu</value>

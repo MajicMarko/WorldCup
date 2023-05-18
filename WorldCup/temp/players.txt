@@ -1,4 +1,4 @@
 Tunisia|TUN
-Syam BEN YOUSSEF|False|2|Defender
 Yassine MERIAH|False|4|Defender
 Fakhreddine BEN YOUSSEF|False|8|Forward
+Anice BADRI|False|9|Midfield

@@ -44,7 +44,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.Background>
-            <ImageBrush ImageSource="\images\bg4.jpg" />
+            <ImageBrush ImageSource="\images\bg3.jpg" />
         </Grid.Background>
 
         <Label Grid.Row="1" Content="{x:Static lang:Resources.sdlblChampionship}" HorizontalAlignment="Right" Margin="0,0,0,38" Grid.RowSpan="2" Width="215" Foreground="White" VerticalAlignment="Center"></Label>
@@ -67,11 +67,11 @@
             <ComboBoxItem x:Name="Maximize" Content="{x:Static lang:Resources.sdddliMaximize}"/>
         </ComboBox>
 
-        <Button Grid.Row="4" Grid.Column="0" 
-                HorizontalAlignment="Left" Click="BtnExit_Click" 
+        <Button Grid.Row="4" 
+                HorizontalAlignment="Center" Click="BtnExit_Click" 
                 Content="{x:Static lang:Resources.btnClose}" Height="53" Margin="30,0,0,0" VerticalAlignment="Top" Width="110" FontSize="10" FontWeight="Bold" Background="#CC000000" Foreground="#FFFFFBFB"></Button>
-        <Button Grid.Row="4" Grid.Column="0"
+        <Button Grid.Row="4" Grid.Column="1"
                 HorizontalAlignment="Left" Click="BtnSave_Click" 
-                Content="{x:Static lang:Resources.sdbtnNext}" Height="53" VerticalAlignment="Top" Width="110" Margin="188,0,0,0" Foreground="#FFFBF9F9" BorderBrush="Black" FontSize="10" FontWeight="Bold" Background="#CC000000"></Button>
+                Content="{x:Static lang:Resources.sdbtnNext}" Height="53" VerticalAlignment="Center" Width="110" Margin="5,0,0,0" Foreground="#FFFBF9F9" BorderBrush="Black" FontSize="10" FontWeight="Bold" Background="#CC000000"></Button>
     </Grid>
 </Window>
