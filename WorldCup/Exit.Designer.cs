@@ -41,9 +41,11 @@
             // 
             // btnNo
             // 
+            this.btnNo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btnNo.BackColor = System.Drawing.Color.Azure;
             resources.ApplyResources(this.btnNo, "btnNo");
             this.btnNo.Name = "btnNo";
+            this.btnNo.TabStop = false;
             this.btnNo.UseVisualStyleBackColor = false;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
@@ -65,6 +67,8 @@
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.lblMessage);
             this.Name = "Exit";
+            this.Load += new System.EventHandler(this.Exit_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Exit_KeyUp);
             this.ResumeLayout(false);
 
         }

@@ -1,16 +1,30 @@
-﻿using System.Windows;
+﻿using DAL.Model;
+using System.Windows;
 using System.Windows.Input;
+using WPF.Properties;
+using DAL.Interface;
+using Settings = DAL.Model.Settings;
+using System.Globalization;
+using System.Threading;
 
 namespace WPF
 {
     /// <summary>
     /// Interaction logic for MyMessage.xaml
     /// </summary>
+    /// 
+
+
+
+
+
     public partial class MyMessage : Window
     {
+
         public bool Save { get; set; }
         public MyMessage(string message)
         {
+
             InitializeComponent();
             txtMessage.Text = message;
         }

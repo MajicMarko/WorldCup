@@ -24,7 +24,7 @@ namespace DAL.Model
         public enum WindowSizeE
         {
             Small,
-            Midium,
+            Medium,
             Maximize
         }
 

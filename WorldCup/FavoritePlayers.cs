@@ -59,7 +59,7 @@ namespace WorldCup
             }
             catch (Exception ex)
             {
-                lblError.Text = (settings.Language.ToString() == "en") ? "Error" : "Greška";
+                lblError.Text = (settings.Language.ToString() == "en") ? "Error" : "Greška1";
                 btnNext.Enabled = false;
                 lblError.Show();
             }
@@ -78,7 +78,7 @@ namespace WorldCup
             }
             catch (Exception)
             {
-                lblError.Text = (settings.Language.ToString() == "en") ? "Error" : "Greška";
+                lblError.Text = (settings.Language.ToString() == "en") ? "Error" : "Greška2";
                 lblError.Visible = true;
             }
             lblError.Visible = false;

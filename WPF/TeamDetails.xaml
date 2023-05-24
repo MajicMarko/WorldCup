@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:lang="clr-namespace:WPF.Properties"
+                WindowStartupLocation="CenterScreen"
+
         mc:Ignorable="d"
         Title="{x:Static lang:Resources.tdTitle}" Height="365" Width="800" MinHeight="450" MinWidth="800">
     <Window.Resources>
@@ -50,7 +52,7 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
-            <Label Content="{x:Static lang:Resources.tdlblGamesPlayed}" Foreground="White" VerticalAlignment="Center" Width="263" HorizontalContentAlignment="Right"/>
+            <Label Content="{x:Static lang:Resources.tdlblGamesPlayed}" Foreground="White" VerticalAlignment="Center" Width="263" HorizontalContentAlignment="Right" HorizontalAlignment="Right"/>
             <Label x:Name="lblGamesPlayed" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Grid.Row="2">

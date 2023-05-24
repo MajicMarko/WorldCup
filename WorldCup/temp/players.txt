@@ -1,4 +1,4 @@
-Tunisia|TUN
-Yassine MERIAH|False|4|Defender
-Fakhreddine BEN YOUSSEF|False|8|Forward
-Anice BADRI|False|9|Midfield
+Croatia|CRO
+Sime VRSALJKO|False|2|Defender
+Ivan STRINIC|False|3|Defender
+Ivan PERISIC|False|4|Forward

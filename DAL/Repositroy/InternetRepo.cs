@@ -2,6 +2,7 @@
 using DAL.Model;
 using Newtonsoft.Json;
 using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,16 +14,32 @@ namespace DAL.Repositroy
         public string REPRESENTATION;
         public string URL;
 
-        private Task<RestResponse<T>> GetData<T>(string source)
+        private async Task<RestResponse<T>> GetData<T>(string source)
         {
             RestClient restClient = new RestClient("https://worldcup-vua.nullbit.hr/men/teams/results");
-            return restClient.ExecuteAsync<T>(new RestRequest());
+            RestRequest restRequest = new RestRequest();
+
+            return await restClient.ExecuteAsync<T>(restRequest);
         }
 
-        private T Desserialize<T>(RestResponse<T> restResponse)
+        private T Deserialize<T>(RestResponse<T> restResponse)
         {
-            return JsonConvert.DeserializeObject<T>(restResponse.Content);
+            string jsonContent = restResponse.Content;
+
+            try
+            {
+                T deserializedObject = JsonConvert.DeserializeObject<T>(jsonContent);
+                return deserializedObject;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deserializing JSON: {ex.Message}");
+                return default; // Return default value for type T (e.g., null for reference types)
+            }
         }
+
+
+
 
         public void Settings(Settings settings)
         {
@@ -38,12 +55,12 @@ namespace DAL.Repositroy
 
         public async Task<IList<Player>> LoadPlayers(string fifaCode)
         {
-            URL = "https://worldcup-vua.nullbihttps://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifaCode;
+            URL = "https://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifaCode;
             IList<Match> matches = new List<Match>();
             IList<Player> players = new List<Player>();
             IList<TeamStatistics> teams = new List<TeamStatistics>();
             RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(URL);
-            matches = (IList<Match>)Desserialize<IList<Match>>(restResponse);
+            matches = Deserialize<IList<Match>>(restResponse);
             foreach (Match match in matches)
             {
                 if (match.HomeTeam.Code == fifaCode)
@@ -75,54 +92,59 @@ namespace DAL.Repositroy
             return players;
         }
 
+
         public async Task<IList<Team>> LoadTeams(Settings settings)
         {
-            URL = $"https://worldcup-vua.nullbit.hr/men/teams/results";
+            string url = "https://worldcup-vua.nullbit.hr/men/teams/results";
             IList<Team> teams = new List<Team>();
-            RestResponse<IList<Team>> restResponse = await GetData<IList<Team>>(URL);
-            teams = (IList<Team>)Desserialize<IList<Team>>(restResponse);
+            RestResponse<IList<Team>> restResponse = await GetData<IList<Team>>(url);
+            teams = Deserialize<IList<Team>>(restResponse);
             return teams;
         }
 
+
         public async Task<Team> LoadTeam(string fifaCode)
         {
-            URL = $"https://worldcup-vua.nullbit.hr/men/teams/results";
-            Team team = new Team();
+            string url = "https://worldcup-vua.nullbit.hr/men/teams/results";
+            Team team = null;
             IList<Team> teams = new List<Team>();
-            RestResponse<IList<Team>> restResponse = await GetData<IList<Team>>(URL);
-            teams = (IList<Team>)Desserialize<IList<Team>>(restResponse);
+            RestResponse<IList<Team>> restResponse = await GetData<IList<Team>>(url);
+            teams = Deserialize<IList<Team>>(restResponse);
             team = teams.FirstOrDefault(t => t.FifaCode == fifaCode);
             return team;
         }
 
+
         public async Task<IList<Match>> LoadTeamRankings(string fifaCode)
         {
-            URL = $"https://worldcup-vua.nullbihttps://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifaCode;
+            string url = $"https://worldcup-vua.nullbit.hr/men/matches/country?fifa_code={fifaCode}";
             IList<Match> matches = new List<Match>();
-            RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(URL);
-            matches = (IList<Match>)Desserialize<IList<Match>>(restResponse);
+            RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(url);
+            matches = Deserialize<IList<Match>>(restResponse);
             return matches;
         }
+
 
         public async Task<IList<Match>> LoadMatches()
         {
-            URL = "https://worldcup-vua.nullbit.hr/men/teams/results";
+            string url = "https://worldcup-vua.nullbit.hr/men/teams/results";
             IList<Match> matches = new List<Match>();
-            RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(URL);
-            matches = (IList<Match>)Desserialize<IList<Match>>(restResponse);
+            RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(url);
+            matches = Deserialize<IList<Match>>(restResponse);
             return matches;
         }
 
+
         public async Task<IList<Player>> LoadPlayerRankings(string fifaCode)
         {
-            URL = "https://worldcup-vua.nullbihttps://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifaCode;
+            string url = "https://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifaCode;
             IList<Match> matches = new List<Match>();
             IList<Player> players = new List<Player>();
             IList<TeamStatistics> teams = new List<TeamStatistics>();
             IList<TeamEvent> happenings = new List<TeamEvent>();
-            RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(URL);
-            matches = (IList<Match>)Desserialize<IList<Match>>(restResponse);
 
+            RestResponse<IList<Match>> restResponse = await GetData<IList<Match>>(url);
+            matches = Deserialize<IList<Match>>(restResponse);
 
             foreach (Match match in matches)
             {
@@ -148,19 +170,20 @@ namespace DAL.Repositroy
             {
                 foreach (Player player in team.StartingEleven)
                 {
-                    if (players.FirstOrDefault(e => e.Name == player.Name) == null)
+                    Player existingPlayer = players.FirstOrDefault(p => p.Name == player.Name);
+                    if (existingPlayer == null)
                     {
                         player.Apearences = 1;
                         players.Add(player);
                     }
                     else
                     {
-                        players.FirstOrDefault(p => p.Name == player.Name).Apearences++;
+                        existingPlayer.Apearences++;
                     }
                 }
                 foreach (Player player in team.Substitutes)
                 {
-                    if (players.FirstOrDefault(e => e.Name == player.Name) == null)
+                    if (players.FirstOrDefault(p => p.Name == player.Name) == null)
                     {
                         players.Add(player);
                     }
@@ -169,27 +192,28 @@ namespace DAL.Repositroy
 
             foreach (TeamEvent happening in happenings)
             {
-                switch (happening.TypeOfEvent)
+                Player player = players.FirstOrDefault(p => p.Name == happening.Player);
+                if (player != null)
                 {
-                    case TeamEvent.TypeOfEventE.Goal:
-                        players.FirstOrDefault(p => happening.Player == p.Name).Scored++;
-                        break;
-                    case TeamEvent.TypeOfEventE.GoalPenalty:
-                        players.FirstOrDefault(p => happening.Player == p.Name).Scored++;
-                        break;
-                    case TeamEvent.TypeOfEventE.YellowCard:
-                        players.FirstOrDefault(p => happening.Player == p.Name).YellowCards++;
-                        break;
-                    case TeamEvent.TypeOfEventE.YellowCardSecond:
-                        players.FirstOrDefault(p => happening.Player == p.Name).YellowCards++;
-                        break;
-                    case TeamEvent.TypeOfEventE.SubstitutionIn:
-                        players.FirstOrDefault(p => happening.Player == p.Name).Apearences++;
-                        break;
+                    switch (happening.TypeOfEvent)
+                    {
+                        case TeamEvent.TypeOfEventE.Goal:
+                        case TeamEvent.TypeOfEventE.GoalPenalty:
+                            player.Scored++;
+                            break;
+                        case TeamEvent.TypeOfEventE.YellowCard:
+                        case TeamEvent.TypeOfEventE.YellowCardSecond:
+                            player.YellowCards++;
+                            break;
+                        case TeamEvent.TypeOfEventE.SubstitutionIn:
+                            player.Apearences++;
+                            break;
+                    }
                 }
             }
 
             return players;
         }
+
     }
 }

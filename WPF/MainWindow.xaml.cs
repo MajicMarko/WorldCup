@@ -20,10 +20,10 @@ namespace WPF
         private static IRepo repo;
         private static IImageRepo images;
         private Settings.LanguageE language;
+        private static Settings settings;
         private IList<Team> teams;
         private IList<Match> matches;
         private IList<Match> homeTeamMatches = new List<Match>();
-        private static Settings settings;
         private Match match;
         private SettingsDefault settingsDefault;
         private bool editing;
@@ -38,13 +38,12 @@ namespace WPF
             language = settings.Language;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(language.ToString());
 
-            //ode je bila greska jer je uzimalo 0 pogledaj i za medium ostale stvari rade
             if (settings.Size == DAL.Model.Settings.WindowSizeE.Small)
             {
                 this.Height = 600;
                 this.Width = 1000;
             }
-            if (settings.Size == DAL.Model.Settings.WindowSizeE.Midium)
+            if (settings.Size == DAL.Model.Settings.WindowSizeE.Medium)
             {
                 this.Height = 800;
                 this.Width = 1200;
@@ -67,7 +66,8 @@ namespace WPF
 
         private async Task PrepareData()
         {
-            lblError.Content = "Loading data...";
+            string message1 = (settings.Language.ToString() == "en") ? "Loading data..." : "Učitavanje podataka...";
+            lblError.Content = message1;
             lblError.Visibility = Visibility.Visible;
             sPError.Visibility = Visibility.Visible;
             btnAwayTeamDetails.IsEnabled = false;
@@ -76,10 +76,15 @@ namespace WPF
             {
                 matches = await repo.LoadMatches();
                 teams = await repo.LoadTeams(settings);
+                lblError.Visibility = Visibility.Hidden;
+                sPError.Visibility = Visibility.Hidden;
+                btnAwayTeamDetails.IsEnabled = true;
+                btnHomeTeamDetails.IsEnabled = true;
             }
             catch (Exception)
             {
-                lblError.Content = "Conntect costumer support.\nKontaktiraj korisničku službu.";
+                string message2 = (settings.Language.ToString() == "en") ? "Error" : "Greška";
+                lblError.Content = message2;
                 lblError.Visibility = Visibility.Visible;
                 sPError.Visibility = Visibility.Hidden;
             }
@@ -95,10 +100,7 @@ namespace WPF
                 ddlHomeTeam.SelectedIndex = 0;
             }
 
-            lblError.Visibility = Visibility.Hidden;
-            sPError.Visibility = Visibility.Hidden;
-            btnAwayTeamDetails.IsEnabled = true;
-            btnHomeTeamDetails.IsEnabled = true;
+
         }
 
         private void LoadDdlAwayTeam()
@@ -257,7 +259,8 @@ namespace WPF
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            MyMessage myMessage = new MyMessage("Are you shure you want to edit settings?");
+            string message = (settings.Language.ToString() == "en") ? "Do you want to change settings?" : "Želite li promijeniti postavke?";
+            MyMessage myMessage = new MyMessage(message);
             myMessage.ShowDialog();
             if (myMessage.Save)
             {
@@ -275,7 +278,8 @@ namespace WPF
         {
             if (!editing)
             {
-                MyMessage myMessage = new MyMessage("Save settings?");
+                string message = (settings.Language.ToString() == "en") ? "Save settings?" : "Spremi postavke?";
+                MyMessage myMessage = new MyMessage(message);
                 myMessage.ShowDialog();
                 if (myMessage.Save)
                 {

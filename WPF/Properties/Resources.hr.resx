@@ -211,7 +211,7 @@
     <value>Primili golovi:</value>
   </data>
   <data name="tdlblGoalsDifferential" xml:space="preserve">
-    <value>Razlika golova:</value>
+    <value>Gol razlika:</value>
   </data>
   <data name="tdlblGoalsGiven" xml:space="preserve">
     <value>Zabili golova:</value>

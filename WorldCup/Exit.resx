@@ -93,7 +93,7 @@
     <value>Berlin Sans FB, 14pt</value>
   </data>
   <data name="btnNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 129</value>
+    <value>36, 138</value>
   </data>
   <data name="btnNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 84</value>
@@ -120,7 +120,7 @@
     <value>Berlin Sans FB, 14pt</value>
   </data>
   <data name="btnYes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 129</value>
+    <value>282, 138</value>
   </data>
   <data name="btnYes.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 84</value>

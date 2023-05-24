@@ -17,6 +17,7 @@ namespace DAL.Repositroy
         public FileSettingsRepo()
         {
             CreateFilesIfNonExistent();
+            CreateFilesForPlayersIfNonExistent();
         }
 
         private void CreateFilesIfNonExistent()
